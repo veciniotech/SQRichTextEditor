@@ -36,6 +36,14 @@ public extension SQTextEditorDelegate {
     func editor(_ editor: SQTextEditorView, cursorPositionDidChange position: SQEditorCursorPosition) {}
 }
 
+class SQInputAccessoryWebView: WKWebView {
+    var customInputAccessoryView: UIView?
+    
+    override var inputAccessoryView: UIView? {
+        return customInputAccessoryView
+    }
+}
+
 public class SQTextEditorView: UIView {
     
     public weak var delegate: SQTextEditorDelegate?
@@ -43,7 +51,15 @@ public class SQTextEditorView: UIView {
     public lazy var selectedTextAttribute = SQTextAttribute()
     
     public lazy var contentHeight: Int = 0
-    
+    public var customInputAccessoryView: UIView? {
+        get {
+            return (webView as? SQInputAccessoryWebView)?.customInputAccessoryView
+        }
+        set {
+            (webView as? SQInputAccessoryWebView)?.customInputAccessoryView = newValue
+        }
+    }
+        
     private enum JSFunctionType {
         case getHTML
         case insertHTML(html: String)
@@ -125,6 +141,7 @@ public class SQTextEditorView: UIView {
         case cursorPosition = "cursorPosition"
     }
     
+    
     private enum RichTextFormatType {
         case bold
         case italic
@@ -178,13 +195,13 @@ public class SQTextEditorView: UIView {
             config.userContentController.addUserScript(cssScript)
         }
         
-        let _webView = WKWebView(frame: .zero, configuration: config)
-        _webView.translatesAutoresizingMaskIntoConstraints = false
-        _webView.navigationDelegate = self
-        _webView.allowsLinkPreview = false
-        _webView.setKeyboardRequiresUserInteraction(false)
-        return _webView
-    }()
+        let _webView = SQInputAccessoryWebView(frame: .zero, configuration: config)
+           _webView.translatesAutoresizingMaskIntoConstraints = false
+           _webView.navigationDelegate = self
+           _webView.allowsLinkPreview = false
+           _webView.setKeyboardRequiresUserInteraction(false)
+           return _webView
+       }()
     
     private lazy var editorEventQueue: OperationQueue = {
         let _editorEventQueue = OperationQueue()
@@ -232,6 +249,7 @@ public class SQTextEditorView: UIView {
         let plainData = fromString.data(using: .utf8)
         return plainData?.base64EncodedString(options: []) ?? ""
     }
+    
     
     private func setupUI() {
         self.addSubview(webView)
@@ -575,4 +593,3 @@ extension SQTextEditorView: WKScriptMessageHandler {
         }
     }
 }
-
