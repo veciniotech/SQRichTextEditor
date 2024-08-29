@@ -259,12 +259,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = VNMGB5TW9X;
+						DevelopmentTeam = S2Z2BFMDP8;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = VNMGB5TW9X;
+						DevelopmentTeam = S2Z2BFMDP8;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -545,7 +545,7 @@
 			baseConfigurationReference = 0450311EFD7454781585BE78 /* Pods-SQRichTextEditor_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VNMGB5TW9X;
+				DEVELOPMENT_TEAM = S2Z2BFMDP8;
 				INFOPLIST_FILE = SQRichTextEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -561,7 +561,7 @@
 			baseConfigurationReference = 8FE7D84DA14EE6FA5C52901D /* Pods-SQRichTextEditor_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VNMGB5TW9X;
+				DEVELOPMENT_TEAM = S2Z2BFMDP8;
 				INFOPLIST_FILE = SQRichTextEditor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -576,7 +576,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F65B05BF68B29B0CC280384D /* Pods-SQRichTextEditor_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = VNMGB5TW9X;
+				DEVELOPMENT_TEAM = S2Z2BFMDP8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -599,7 +599,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F0C54B3673316F078C09E12 /* Pods-SQRichTextEditor_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = VNMGB5TW9X;
+				DEVELOPMENT_TEAM = S2Z2BFMDP8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
